@@ -1,10 +1,8 @@
 package com.example.dependencyinjection.controllers;
 
-import com.example.dependencyinjection.services.GreetingServiceImpl;
+import com.example.dependencyinjection.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ConstructorInjectedControllerTest {
 
@@ -12,7 +10,7 @@ class ConstructorInjectedControllerTest {
 
     @BeforeEach
     void setUp() {
-        constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
+        constructorInjectedController = new ConstructorInjectedController(new ConstructorGreetingService());
     }
 
     @Test
@@ -23,7 +21,7 @@ class ConstructorInjectedControllerTest {
     @Test
     void testGreeting(){
         System.out.println("Not using Before each method of test case");
-        constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
+        constructorInjectedController = new ConstructorInjectedController(new ConstructorGreetingService());
         System.out.println(constructorInjectedController.getGreeting());
     }
 }
