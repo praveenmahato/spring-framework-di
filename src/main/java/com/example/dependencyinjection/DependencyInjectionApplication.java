@@ -12,8 +12,8 @@ public class DependencyInjectionApplication {
 
 		ApplicationContext ctxt = SpringApplication.run(DependencyInjectionApplication.class, args);
 
-		I18Controller i18Controller = (I18Controller) ctxt.getBean("i18Controller") ;
-		System.out.println(i18Controller.sayHello());
+	/*	I18Controller i18Controller = (I18Controller) ctxt.getBean("i18Controller") ;
+		System.out.println(i18Controller.sayHello());*/
 
 		System.out.println("============================= Primary bean");
 		MyController controller = (MyController) ctxt.getBean("myController");
